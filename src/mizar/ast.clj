@@ -35,6 +35,11 @@
               :lhs (transform (nth node 1))
               :rhs (transform (nth node 3))}
 
+      :constant {:type :constant
+                 :value (transform (second node))}
+      :integer (second node)
+
+
       :type {:type :type
              :def (transform (second node))}
       :ident (second node)
