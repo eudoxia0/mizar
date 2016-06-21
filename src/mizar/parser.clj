@@ -27,14 +27,12 @@
      (* Constants *)
      constant = bool | integer | float
      bool = 'true' | 'false'
-     integer = <sign><intseq>
-     float = <sign><intseq>'.'<intseq>
+     integer = #'[-]?[0-9]+'
+     float = #'[+-]?[0-9]*\\.?[0-9]+([eE][+-]?[0-9]+)?'
 
      (* Identifiers *)
      ident = #'[a-zA-Z_]+'
 
      (* Auxiliary *)
-     <space> = #'\\s'
-     <sign> = '-'*
-     <intseq> = #'[0-9]+'"
+     <space> = #'\\s'"
     :output-format :hiccup))
