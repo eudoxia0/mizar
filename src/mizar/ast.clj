@@ -1,6 +1,5 @@
 (ns mizar.ast
-  "Mizar's AST, and code to turn parser output into the AST."
-  (:require [mizar.parser :refer :all]))
+  "Mizar's AST, and code to turn parser output into the AST.")
 
 (defn transform
   "Transform a CST (parse tree) into an AST."
