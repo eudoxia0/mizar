@@ -1,6 +1,6 @@
 (ns mizar.parser-test
   (:require [clojure.test :refer :all]
-            [mizar.parser :refer :all]))
+            [mizar.parser :refer [grammar]]))
 
 (defmacro is-constant [code type value]
   (let [cst (gensym)]
