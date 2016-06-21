@@ -17,7 +17,8 @@
   (testing "Constants"
     (is-constant "true" :bool "true")
     (is-constant "false" :bool "false")
-    (is-constant "123" :integer "123"))
+    (is-constant "123" :integer "123")
+    (is-constant "1.23" :float "1.23"))
   (testing "Toplevel"
     (let [code "int add(a:int b:int) begin
   return a+b
