@@ -41,5 +41,6 @@
 
       :type {:type :type
              :def (transform (second node))}
-      :ident (second node)
+      :ident {:type :ident
+              :value (second node)}
       nil)))
