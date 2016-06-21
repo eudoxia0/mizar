@@ -11,13 +11,13 @@
   else
     return false
 end"
-          cst (grammar code)]
-      (println cst)
-      (println (transform cst))))
+          cst (grammar code)
+          ast (transform cst)]
+      (is (= (:type ast) :program))))
   (testing "Addition"
     (let [code "int add(a:int b:int) begin
   return a+b
 end"
-          cst (grammar code)]
-      (println cst)
-      (println (transform cst)))))
+          cst (grammar code)
+          ast (transform cst)]
+      (is (= (:type ast) :program)))))
