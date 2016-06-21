@@ -5,7 +5,6 @@
 (defmacro is-constant [code type value]
   (let [cst (gensym)]
     `(let [~cst (grammar ~code :start :constant)]
-       (println ~cst)
        (is (= (first ~cst)
               :constant))
        (is (= (first (second ~cst))
