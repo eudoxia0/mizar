@@ -27,6 +27,4 @@ end"
 end"
           cst (grammar code)
           ast (transform cst)]
-      (println cst)
-      (println ast)
       (is (= (:type ast) :program)))))
