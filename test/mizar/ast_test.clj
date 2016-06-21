@@ -20,4 +20,13 @@ end"
 end"
           cst (grammar code)
           ast (transform cst)]
+      (is (= (:type ast) :program))))
+  (testing "Constant Addition"
+    (let [code "int plusone(val:int) begin
+  return val+1
+end"
+          cst (grammar code)
+          ast (transform cst)]
+      (println cst)
+      (println ast)
       (is (= (:type ast) :program)))))
