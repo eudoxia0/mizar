@@ -25,7 +25,7 @@
      binop = expression ('+'|'-'|'*'|'/'|'=') expression
 
      (* Constants *)
-     constant = bool | integer | float
+     constant = bool | float | integer
      bool = 'true' | 'false'
      integer = #'[-]?[0-9]+'
      float = #'[+-]?[0-9]*\\.?[0-9]+([eE][+-]?[0-9]+)?'
