@@ -17,9 +17,16 @@
     (is-constant "true" :bool "true")
     (is-constant "false" :bool "false")
     (is-constant "123" :integer "123")
-    (is-constant "1.23" :float "1.23"))
+    (is-constant "1.23" :float "1.23")
+    (is-constant "\"test\"" :string "\"test\""))
   (testing "Toplevel"
     (let [code "int add(a:int b:int) begin
   return a+b
+end"]
+      (is (grammar code))))
+  (testing "Function Calls"
+    (let [code "int hello() begin
+  puts(\"hello\")
+  return 0
 end"]
       (is (grammar code)))))
