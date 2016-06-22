@@ -1,0 +1,3 @@
+int main() begin
+  return puts("Hello, world!")
+end
