@@ -37,6 +37,9 @@ typedef unsigned char bool;")
                    (emit (:lhs node))
                    (emit (:op node))
                    (emit (:rhs node)))
+    :call (format "%s(%s)"
+                  (emit (:function node))
+                  (join ", " (map emit (:arguments node))))
 
     :constant (:value node)
     :type (emit (:def node))

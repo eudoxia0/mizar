@@ -33,11 +33,15 @@
               :op (nth node 2)
               :lhs (transform (nth node 1))
               :rhs (transform (nth node 3))}
+      :call {:type :call
+             :function (transform (nth node 1))
+             :arguments (mapt (butlast (rest (rest (rest node)))))}
 
       :constant {:type :constant
                  :value (transform (second node))}
       :integer (second node)
-
+      :float (second node)
+      :string (second node)
 
       :type {:type :type
              :def (transform (second node))}
