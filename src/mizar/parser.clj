@@ -4,7 +4,7 @@
 
 (def grammar
   (insta/parser
-    "program = defn
+    "program = <space>* defn <space>*
 
      (* Toplevel Expressions *)
      defn = type <space>+ ident arglist <space>+ block
@@ -21,14 +21,16 @@
      return = 'return' expression
 
      (* Expressions *)
-     expression = <space>* (binop | constant | ident) <space>*
+     expression = <space>* (binop | constant | call | ident) <space>*
      binop = expression ('+'|'-'|'*'|'/'|'=') expression
+     call = ident '(' expression* ')'
 
      (* Constants *)
-     constant = bool | float | integer
+     constant = bool | float | integer | string
      bool = 'true' | 'false'
      integer = #'[-]?[0-9]+'
      float = #'[+-]?[0-9]*\\.?[0-9]+([eE][+-]?[0-9]+)?'
+     string = #'(\\\"[^\"]*\\\")'
 
      (* Identifiers *)
      ident = #'[a-zA-Z_]+'
