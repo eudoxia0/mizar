@@ -5,7 +5,19 @@ C.
 
 ## Usage
 
-FIXME: shell session
+```bash
+$ cat examples/hello.mz
+int main() begin
+  return puts("Hello, world!")
+end
+
+$ lein run examples/hello.mz > hello.c
+
+$ gcc hello.c -o hello
+
+$ ./hello
+Hello, world!
+```
 
 ## License
 
